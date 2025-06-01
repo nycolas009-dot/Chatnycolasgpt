@@ -11,6 +11,33 @@
             "type": "chrome",
             "webRoot": "${workspaceFolder}"
         },
+        {from IPython.display import display, Markdown
+
+# Definindo o modelo e as ferramentas
+modelo = "GPT-4-turbo (o4)"
+ferramentas = {
+    "Navegador Web": True,
+    "Gerador de Código Python": True,
+    "Edição de Imagens (DALL·E)": True,
+    "Memória": True,
+    "Análise de Dados Avançada": True
+}
+
+# Criando a visualização em Markdown
+md_output = f"### Model: **{modelo}**\n\n**🔧 Ferramentas:**\n"
+for ferramenta, ativa in ferramentas.items():
+    status = "✅" if ativa else "❌"
+    md_output += f"- {status} {ferramenta}\n"
+
+# Exibindo o resultado
+display(Markdown(md_output))
+
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "request": "attach",
+            "type": "chrome",
+            "webRoot": "${workspaceFolder}"
+        },
 
         {
             "name": "Launch Chrome",
